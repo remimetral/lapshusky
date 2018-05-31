@@ -1,0 +1,16 @@
+
+//
+//  =========================================================
+//  Functions
+//  =========================================================
+//
+
+@function get-vw($target) {
+  $vw-context: ($max-breakpoint * .01) * 1px;
+  @return ($target/$vw-context) * 1vw;
+}
+
+@function get-vh($target) {
+  $vh-context: ($max-breakpoint * .01) * 1px;
+  @return ($target/$vh-context) * 1vh;
+}

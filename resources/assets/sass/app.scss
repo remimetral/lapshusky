@@ -12,17 +12,22 @@
 // Buefy
 // @import '~buefy/lib/buefy';
 
-// Common
-@import "common/variables";
-@import "common/settings";
-@import "common/mixins";
-@import "common/layout";
-//@import "common/fonts";
+// Abstracts
+@import "abstracts/variables";
+@import "abstracts/functions";
+@import "abstracts/mixins";
 
-// Modules
+// Base
+// @import "abstracts/colors";
+// @import "abstracts/typography";
+
+// Components
 @import "components/carousel";
-@import "components/navbar";
 @import "components/grid";
+
+// layout
+@import "layout/layout";
+@import "layout/navigation";
 
 // Pages
 @import "pages/auth";
