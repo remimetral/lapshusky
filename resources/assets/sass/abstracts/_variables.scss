@@ -5,6 +5,9 @@
 //  =========================================================
 //
 
+// Font Size
+$fluid-font-size-ratio: 1 !default;
+
 // Body
 $body-bg: #f5f8fa;
 
@@ -43,5 +46,6 @@ $input-color-placeholder: lighten($text-color, 30%);
 // Panels
 $panel-default-heading-bg: #fff;
 
-// Media Queries
+// Breakpoint
+$max-breakpoint: 800;
 $screen-xlg-min: 1340px;

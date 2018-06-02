@@ -5,39 +5,6 @@
 //  =========================================================
 //
 
-@mixin force_hardware_acceleration() {
-	transform: translateZ(0);
-	perspective: 1000;
-	backface-visibility: hidden;
-	transform: translate3d(0, 0, 0);
-}
-
-@mixin background_cover() {
-	background-position: center center;
-	background-size: cover;
-	background-repeat: no-repeat;
-	@include force_hardware_acceleration();
-	transform: scale(1, 1);
-}
-
-@mixin cover_text() {
-	position: absolute;
-	right: 0px;
-	left: 0;
-	height: 100%;
-	background: rgba(#fff, .7);
-	@media (min-width: $screen-md-min) {
-		left: 50%;
-	}
-}
-
-@mixin container_text() {
-	padding: 0 15px;
-	@media (min-width: $screen-md-min) {
-		padding: 0 0 0 25px;
-	}
-}
-
 @mixin box-sizing($border) {
   -webkit-box-sizing: $border;
   	 -moz-box-sizing: $border;
@@ -60,4 +27,47 @@
   	  -ms-transition: $transition;
   	   -o-transition: $transition;
   		  transition: $transition;
+}
+
+@mixin force_hardware_acceleration() {
+	transform: translateZ(0);
+	perspective: 1000;
+	backface-visibility: hidden;
+	transform: translate3d(0, 0, 0);
+}
+
+@mixin background_cover() {
+	background-position: center center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	@include force_hardware_acceleration();
+	transform: scale(1, 1);
+}
+
+@mixin fluid-font-size($size, $options: ()) {
+	$important: false;
+	@if map-has-key($options, 'important') {
+		$important: map-get($options, 'important')
+	}
+
+	$magic-size: magic-size($size);
+	font-size: $size if($important, !important, null);
+	font-size: $magic-size if($important, !important, null);
+	content: 'viewport-units-buggyfill; font-size: #{$magic-size}';
+
+	@if map-has-key($options, 'min') {
+		$min-size: map-get($options, 'min');
+		$min-vw: magic-size-viewport($size, $min-size);
+		@media (max-width: $min-vw) {
+			font-size: #{$min-size} if($important, !important, null);
+		}
+	}
+
+	@if map-has-key($options, 'max') {
+		$max-size: map-get($options, 'max');
+		$max-vw: magic-size-viewport($size, $max-size);
+		@media (min-width: $max-vw) {
+			font-size: #{$max-size} if($important, !important, null);
+		}
+	}
 }

@@ -21,8 +21,14 @@
 			<div class="content">
 				<div class="row">
 					<div class="small-12 columns">
-						<div class="title">Brand</div>
-						<div class="caption">Think 1 - Think 2 - Think 3 - Think 4</div>
+						<div class="title">Northrn</div>
+						<div class="caption">Explore the unknow.</div>
+						<div class="whatido">
+							<div class="cre">Create. </div>
+							<div class="des">Design. </div>
+							<div class="dev">Devlop. </div>
+							<div class="exp">Exp+</div>
+						</div>
 					</div>
 				</div>
 			</div>
