@@ -1,6 +1,9 @@
 
 import $ from 'jquery';
-import TweenMax from "gsap";
+import TweenMax from 'gsap';
+import Parallax from 'parallax-js';
+import { TextPlugin } from 'gsap/TextPlugin';
+
 
 export default class Deeplink {
     /**

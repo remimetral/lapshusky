@@ -13,24 +13,25 @@
 
 	<div class="container_page {{ $page_id }}">
 		<div class="bg_page">
-			@include('components/carousel/bootstrap')
 			<div class="trame"></div>
 			<div class="gradient"></div>
+			<div class="background" data-depth="0.1"></div>
 		</div>
 		<div class="content_scroll">
 			<div class="content">
 				<div class="row">
 					<div class="small-12 columns">
-						<div class="title">Northrn</div>
-						<div class="caption">Explore the unknow.</div>
+						<div class="title">Иоятнгn</div>
+						<div class="caption">As far as you can imagine.</div>
 						<div class="whatido">
 							<div class="cre">Create. </div>
 							<div class="des">Design. </div>
 							<div class="dev">Devlop. </div>
-							<div class="exp">Exp+</div>
+							<div class="exp">Experience.</div>
 						</div>
 					</div>
 				</div>
+				<div class="scroll_down"></div>
 			</div>
 		</div>
 	</div>
